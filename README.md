@@ -1,4 +1,4 @@
-# ✈️ AI Travel Planner
+#  AI Travel Planner
 
 An AI-powered travel planning system that combines **Knowledge Graphs**, **Semantic Web technologies**, and **Large Language Models** to generate personalised, budget-aware itineraries backed by reusable tourism ontologies.
 
@@ -37,13 +37,13 @@ All three modules are exposed through a FastAPI REST interface with interactive 
 
 ## Features
 
-- 🗺️ **Semantic destination recommendations** — ranked by preference match score and budget
-- 📅 **Day-by-day itinerary generation** — city-specific highlights rotated across travel days
-- 💶 **Budget-aware filtering** — exclude destinations above a daily cost threshold
-- 🥗 **Dietary preference support** — vegetarian, vegan, and other restrictions surfaced in notes
-- 🤖 **Optional LLM enrichment** — Claude generates a narrative paragraph per day when an API key is present; gracefully skipped otherwise
-- 🔍 **SPARQL-queryable knowledge graph** — extend or swap the ontology without touching application code
-- 🌐 **REST API** — FastAPI with auto-generated OpenAPI / Swagger docs at `/docs`
+-  **Semantic destination recommendations** — ranked by preference match score and budget
+-  **Day-by-day itinerary generation** — city-specific highlights rotated across travel days
+-  **Budget-aware filtering** — exclude destinations above a daily cost threshold
+-  **Dietary preference support** — vegetarian, vegan, and other restrictions surfaced in notes
+-  **Optional LLM enrichment** — Claude generates a narrative paragraph per day when an API key is present; gracefully skipped otherwise
+-  **SPARQL-queryable knowledge graph** — extend or swap the ontology without touching application code
+-  **REST API** — FastAPI with auto-generated OpenAPI / Swagger docs at `/docs`
 
 ---
 
@@ -101,8 +101,6 @@ ai-travel-planner/
 ## Prerequisites
 
 - Python **3.11+**
-- A free [GitHub account](https://github.com) (to clone / fork)
-- An [Anthropic API key](https://console.anthropic.com) *(optional — only needed for LLM narrative enrichment)*
 
 ---
 
@@ -221,7 +219,7 @@ Returns destinations ranked by preference match score.
 
 | Field | Type | Required | Description |
 |---|---|---|---|
-| `activities` | `list[str]` | ✅ | Preferred activities e.g. `["Museum", "Wine"]` |
+| `activities` | `list[str]` | Yes | Preferred activities e.g. `["Museum", "Wine"]` |
 | `cuisine` | `string` | No | Filter by cuisine style e.g. `"Italian"` |
 | `max_daily_budget_eur` | `int` | No | Exclude destinations above this daily cost |
 
@@ -249,8 +247,8 @@ Generates a day-by-day travel plan.
 
 | Field | Type | Required | Description |
 |---|---|---|---|
-| `city` | `string` | ✅ | Destination city |
-| `days` | `int` | ✅ | Number of travel days |
+| `city` | `string` | Yes | Destination city |
+| `days` | `int` | Yes | Number of travel days |
 | `start_date` | `date` | No | ISO date string, defaults to today |
 | `budget_per_day_eur` | `int` | No | Target daily spend |
 | `preferences` | `list[str]` | No | Activity interests |
